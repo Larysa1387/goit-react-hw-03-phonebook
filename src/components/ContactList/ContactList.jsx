@@ -8,15 +8,15 @@ const ContactList = ({ contacts, onDeleteContact }) => {
     <ul className={s.contactList}>
       {contacts.map(({ id, name, number, contactType }) => {
         return (
-					<li key={id} className={s.contactItem}>
-						<Contact
-							name={name}
-							number={number}
-							contactType={contactType}
-							onDeleteContact={() => onDeleteContact(id)}
-						/>
-					</li>
-				);
+          <li key={id} className={s.contactItem}>
+            <Contact
+              name={name}
+              number={number}
+              contactType={contactType}
+              onDeleteContact={() => onDeleteContact(id)}
+            />
+          </li>
+        );
       })}
     </ul>
   );
