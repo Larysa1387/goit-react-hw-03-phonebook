@@ -11,7 +11,7 @@ const Contact = ({ name, number, contactType, onDelete }) => {
         <p className={s.contactType}>({contactType})</p>
       </div>
       <button className={s.btnDelete} onClick={onDelete}>
-        <DeleteIcon width='25' height='20'/>
+        <DeleteIcon width="25" height="20" />
       </button>
     </>
   );
