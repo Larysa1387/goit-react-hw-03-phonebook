@@ -84,7 +84,7 @@ input[type='radio']:checked:after {
 }
 
 .btnSubmit {
-  width: 140px;
+  width: 240px;
   height: 40px;
   border-radius: 2px;
   color: rgb(59, 11, 73);

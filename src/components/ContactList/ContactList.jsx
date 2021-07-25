@@ -13,13 +13,15 @@ const ContactList = ({ contacts, onDeleteContact }) => {
               <p>{number}</p>
               <p className={s.contactType}>({contactType})</p>
             </div>
-            <button className={s.btnDelete} onClick={() => onDeleteContact(id)}>Delete</button>
+            <button className={s.btnDelete} onClick={() => onDeleteContact(id)}>
+              Delete
+            </button>
           </li>
         );
       })}
     </ul>
   );
-};
+}
 
 ContactList.propTypes = {
 	contacts: PropTypes.arrayOf(PropTypes.shape(PropTypes.string.isRequired)),

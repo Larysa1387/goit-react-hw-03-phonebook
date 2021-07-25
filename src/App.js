@@ -39,7 +39,6 @@ class App extends Component {
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
-    console.log(parsedContacts);
     if (parsedContacts) {
       this.setState({ contacts: parsedContacts });
     }
@@ -87,20 +86,28 @@ class App extends Component {
     const { contacts, filter } = this.state;
     const visibleContacts = this.getVisibleContact();
     return (
-      <div className="App">
-        <h1 className="App-header">Phonebook</h1>
-        <ContactForm
-          contacts={contacts}
-          onSubmit={this.contactPhonebookSubmit}
-        />
-        <h2 className="App-header">Contacts</h2>
-        <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList
-          contacts={visibleContacts}
-          onDeleteContact={this.deleteContact}
-        />
-      </div>
-    );
+			<div className="App">
+				<h1 className="App-header">Phonebook</h1>
+				<ContactForm
+					contacts={contacts}
+					onSubmit={this.contactPhonebookSubmit}
+				/>
+				<h2 className="App-header">Contacts</h2>
+				<Filter value={filter} onChange={this.changeFilter} />
+				{/* <ContactList
+					contacts={visibleContacts}
+					onDeleteContact={this.deleteContact}
+				/> */}
+				{visibleContacts.length !== 0 ? (
+					<ContactList
+						contacts={visibleContacts}
+						onDeleteContact={this.deleteContact}
+					/>
+				) : (
+					<p className="plug-paragraph">No such contact exists</p>
+				)}
+			</div>
+		);
   }
 }
 
