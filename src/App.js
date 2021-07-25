@@ -36,6 +36,22 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    console.log(parsedContacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const currentContacts = this.state.contacts;
+    const prevContacts = prevState.contact;
+    if (currentContacts !== prevContacts) {
+      localStorage.setItem('contacts', JSON.stringify(currentContacts));
+		}
+  }
   contactPhonebookSubmit = (data) => {
     const { name, number, contactType } = data;
     const contact = {

@@ -45,14 +45,17 @@
 }
 
 .radioLabel {
+  cursor: pointer;
   color: rgb(59, 11, 73);
 }
 
 input[type='radio'] {
   visibility: hidden;
+  /* cursor: pointer; */
 }
 
 input[type='radio']:after {
+  cursor: pointer;
   width: 12px;
   height: 12px;
   border-radius: 12px;
